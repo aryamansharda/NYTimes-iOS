@@ -34,8 +34,8 @@ struct RootView: View {
                     .navigationViewStyle(StackNavigationViewStyle())
                     .navigationBarTitle(Text("NYTimes"))
                     .navigationBarItems(
-                        leading: categoriesView,
-                        trailing: bookmarksView
+                        leading: bookmarksView,
+                        trailing: categoriesView
                     )
             } else {
                 VStack {
