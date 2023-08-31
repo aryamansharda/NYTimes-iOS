@@ -32,7 +32,7 @@ struct RootView: View {
                 ArticleView()
                     .edgesIgnoringSafeArea(.bottom)
                     .navigationViewStyle(StackNavigationViewStyle())
-                    .navigationBarTitle(Text("NYTimes"))
+                    .navigationBarTitle(Text("NYTimes v2.0"))
                     .navigationBarItems(
                         leading: categoriesView,
                         trailing: bookmarksView
