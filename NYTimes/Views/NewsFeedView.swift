@@ -14,33 +14,34 @@ struct NewsFeedView: View {
     var article:Article
     
     var body: some View {
-        HStack {
-            KFImage(URL(string: article.imageUrl)!)
-                .placeholder({
-                    ProgressView()
-                })
-                .resizable()
-                .scaledToFill()
-                .frame(width: 100, height: 120)
-                .clipped()
-                .cornerRadius(12)
-            
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text(article.title)
-                    
-                    .font(.headline)
-                    .lineLimit(2)
-                
-                Text(article.subtitle)
-                    .font(.subheadline)
-                    .opacity(0.7)
-                    .lineLimit(2)
-                
-                Text(article.author)
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
-                    .multilineTextAlignment(.leading)
-            }.padding(.horizontal, 12)
+        VStack(alignment: .leading) {
+            Text(article.title)
+                .font(.headline)
+                .lineLimit(2)
+            Text(article.author)
+                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .multilineTextAlignment(.leading)
+
+            HStack(alignment: .top) {
+                KFImage(URL(string: article.imageUrl)!)
+                    .placeholder({
+                        ProgressView()
+                    })
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 120)
+                    .clipped()
+                    .cornerRadius(12)
+
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(article.subtitle)
+                        .font(.subheadline)
+                        .opacity(0.7)
+                        .lineLimit(6)
+                        .truncationMode(.tail)
+                }.padding(.horizontal, 12)
+            }
         }
         .padding(12)
     }

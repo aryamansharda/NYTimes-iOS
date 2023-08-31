@@ -35,11 +35,11 @@ struct CategorySelector: View {
                                 categoriesViewModel.selectedCategory = category
                                 articleViewModel.loadArticles(for: category)
                         }
-                    }.padding(.leading,8)
+                    }.padding(.leading, 16)
                 }
             }
             .padding(.vertical,24)
-            .background(Color.init(.secondarySystemBackground))
+            .background(Color.black.opacity(0.45))
             .clipped()
             .shadow(radius: 15)
     }

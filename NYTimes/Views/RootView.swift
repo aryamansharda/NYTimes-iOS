@@ -56,7 +56,7 @@ struct RootView: View {
                 isLoaded = true
             }
             articlesViewModel.loadArticles(for: categoriesViewModel.selectedCategory)
-        }
+        }        
     }
 
     private var categoriesView: some View {
